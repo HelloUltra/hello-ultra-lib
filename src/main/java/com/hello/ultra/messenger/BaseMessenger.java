@@ -1,6 +1,7 @@
 package com.hello.ultra.messenger;
 
 import com.hello.ultra.base.ServiceConnector;
+import com.hello.ultra.base.enums.API;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +10,18 @@ import org.springframework.stereotype.Component;
  */
 public abstract class BaseMessenger<T, K> implements Messenger<T, K>{
 
-    private static ServiceConnector serviceConnector = new ServiceConnector();
+    private API api;
+
+    public BaseMessenger(API api) {
+        this.api = api;
+    }
+
+    public API getApi() {
+        return api;
+    }
+
+    @Autowired
+    private ServiceConnector serviceConnector;
 
     public K proceed(Object request){
         return transmit(

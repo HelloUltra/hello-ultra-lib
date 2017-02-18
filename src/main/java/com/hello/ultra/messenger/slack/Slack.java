@@ -1,5 +1,6 @@
 package com.hello.ultra.messenger.slack;
 
+import com.hello.ultra.base.enums.API;
 import com.hello.ultra.messenger.BaseMessenger;
 import com.hello.ultra.base.request.Request;
 import com.hello.ultra.base.response.Response;
@@ -10,6 +11,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Slack extends BaseMessenger<SlackRequest, SlackResponse>{
+
+    public Slack() {
+        super (API.SLACK);
+    }
+
     @Override
     public Request receive(SlackRequest request) {
         return null;

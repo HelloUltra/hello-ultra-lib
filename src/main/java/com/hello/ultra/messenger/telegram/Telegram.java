@@ -1,5 +1,6 @@
 package com.hello.ultra.messenger.telegram;
 
+import com.hello.ultra.base.enums.API;
 import com.hello.ultra.messenger.BaseMessenger;
 import com.hello.ultra.base.request.Request;
 import com.hello.ultra.base.response.Response;
@@ -17,6 +18,9 @@ public class Telegram extends BaseMessenger<Update, SendMessage> {
 
     private static final Logger logger = LoggerFactory.getLogger(Telegram.class);
 
+    public Telegram() {
+        super (API.TELEGRAM);
+    }
     @Override
     public Request receive(Update request) {
         logger.info("receive request.getMessage() : {}", request.getMessage());
