@@ -29,7 +29,7 @@ public class ServiceConnector {
 
         logger.info("ServiceConnector start");
 
-        Response response = new Response("return message", request);
+        Response response = new Response("테스트 응답", request);
 
         return response;
     }

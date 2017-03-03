@@ -9,4 +9,5 @@ import com.hello.ultra.base.pojo.response.Response;
 public interface Messenger<T, K> {
     Request receive(T request);
     K transmit(Response response);
+    Class<T> getRequestClass();
 }

@@ -14,11 +14,16 @@ public class Kakao extends BaseMessenger<KakaoRequest, KakaoResponse>{
 
     @Override
     public Request receive(KakaoRequest request) {
-        return null;
+        return new Request(request.getContent(), null);
     }
 
     @Override
     public KakaoResponse transmit(Response response) {
-        return null;
+        return new KakaoResponse(response.getMessage(), null, null);
+    }
+
+    @Override
+    public Class<KakaoRequest> getRequestClass() {
+        return KakaoRequest.class;
     }
 }

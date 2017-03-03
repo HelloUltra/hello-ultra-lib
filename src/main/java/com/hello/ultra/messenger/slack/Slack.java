@@ -21,4 +21,9 @@ public class Slack extends BaseMessenger<SlackRequest, SlackResponse>{
     public SlackResponse transmit(Response response) {
         return null;
     }
+
+    @Override
+    public Class<SlackRequest> getRequestClass() {
+        return null;
+    }
 }

@@ -29,4 +29,9 @@ public class Telegram extends BaseMessenger<Update, SendMessage> {
         logger.info("transmit response.getMessage() : {}", response.getMessage());
         return new SendMessage().setText(response.getMessage()).setChatId(response.getRoom());
     }
+
+    @Override
+    public Class<Update> getRequestClass() {
+        return Update.class;
+    }
 }

@@ -21,4 +21,9 @@ public class Line extends BaseMessenger<LineRequest, LineResponse>{
     public LineResponse transmit(Response response) {
         return null;
     }
+
+    @Override
+    public Class<LineRequest> getRequestClass() {
+        return null;
+    }
 }
