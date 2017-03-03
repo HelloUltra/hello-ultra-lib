@@ -23,7 +23,7 @@ public abstract class BaseMessenger<T, K> implements Messenger<T, K>{
     public BaseMessenger() {
         ControllerCheck type = getClass().getAnnotation(ControllerCheck.class);
         logger.info("type : {}" , type.type());
-        this.api = API.valueOf(type.type());
+        this.api = type.type();
     }
 
 

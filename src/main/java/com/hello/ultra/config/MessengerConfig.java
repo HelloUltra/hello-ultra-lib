@@ -37,13 +37,4 @@ public class MessengerConfig {
 			logger.error("telegramInitializerException - {}", e);
 		}
 	}
-
-//
-//	@Bean
-//	TelegramBotsApi botsApi() throws TelegramApiRequestException {
-//		ApiContextInitializer.init();
-//		TelegramBotsApi botsApi = new TelegramBotsApi();
-//		botsApi.registerBot(new TelegramSocket());
-//		return botsApi;
-//	}
 }
