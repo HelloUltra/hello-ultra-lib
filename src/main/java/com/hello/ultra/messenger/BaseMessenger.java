@@ -1,5 +1,6 @@
 package com.hello.ultra.messenger;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hello.ultra.base.ServiceConnector;
 import com.hello.ultra.base.anotation.ControllerCheck;
 import com.hello.ultra.base.enums.API;
@@ -30,10 +31,13 @@ public abstract class BaseMessenger<T, K> implements Messenger<T, K>{
     @Autowired
     private ServiceConnector serviceConnector;
 
+    @Autowired
+    private ObjectMapper objectMapper;
+
     public K proceed(Object request){
         return transmit(
                 serviceConnector.start(
-                        receive((T) request)
+                        receive(objectMapper.convertValue(request, getRequestClass()))
                 )
         );
     }

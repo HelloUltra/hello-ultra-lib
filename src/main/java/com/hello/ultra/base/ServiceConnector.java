@@ -1,7 +1,7 @@
 package com.hello.ultra.base;
 
-import com.hello.ultra.base.request.Request;
-import com.hello.ultra.base.response.Response;
+import com.hello.ultra.base.pojo.request.Request;
+import com.hello.ultra.base.pojo.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -29,8 +29,7 @@ public class ServiceConnector {
 
         logger.info("ServiceConnector start");
 
-        Response response = new Response();
-        response.setMessage("return message");
+        Response response = new Response("테스트 응답", request);
 
         return response;
     }

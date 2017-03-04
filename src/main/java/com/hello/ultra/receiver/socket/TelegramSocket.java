@@ -24,9 +24,7 @@ public class TelegramSocket extends TelegramLongPollingBot {
         if (update.hasMessage() && update.getMessage().hasText()) {
             try {
                 // Call method to send the message
-                SendMessage message = (SendMessage) gateway.proceed(API.TELEGRAM, update);
-                message.setChatId(update.getMessage().getChatId());
-                sendMessage(message);
+                sendMessage((SendMessage) gateway.proceed(API.TELEGRAM, update));
             } catch (TelegramApiException e) {
                 logger.error("TelegramApiException - {}", e);
             }
