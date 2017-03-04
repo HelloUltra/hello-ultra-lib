@@ -36,11 +36,11 @@ public class TelegramSocket extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "";
+        return "UltraDemoBot";
     }
 
     @Override
     public String getBotToken() {
-        return "";
+        return "303523137:AAG4OXaFUdB91Jde5u__e4WRC2LfDyre7n4";
     }
 }
