@@ -23,6 +23,7 @@ public class TelegramSocket extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             try {
+                logger.info("update toString : " + update.toString());
                 // Call method to send the message
                 sendMessage((SendMessage) gateway.proceed(API.TELEGRAM, update));
             } catch (TelegramApiException e) {
